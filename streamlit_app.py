@@ -30,12 +30,12 @@ st.set_page_config(layout="wide")
 st.title("ML Edu")
 st.subheader("Educación en Machine Learning")
 
-if "x_train" not in st.session_state: st.session_state["x_train"] = []    
-if "y_train" not in st.session_state: st.session_state["y_train"] = []    
-if "x_test" not in st.session_state: st.session_state["x_test"] = []    
-if "y_test" not in st.session_state: st.session_state["y_test"] = []    
-if "x_val" not in st.session_state: st.session_state["x_val"] = []    
-if "y_val" not in st.session_state: st.session_state["y_val"] = []    
+if "x_train" not in st.session_state: st.session_state["x_train"] = np.array([])    
+if "y_train" not in st.session_state: st.session_state["y_train"] = np.array([])
+if "x_test" not in st.session_state: st.session_state["x_test"] = np.array([])
+if "y_test" not in st.session_state: st.session_state["y_test"] = np.array([])
+if "x_val" not in st.session_state: st.session_state["x_val"] = np.array([])
+if "y_val" not in st.session_state: st.session_state["y_val"] = np.array([])
 # Side Bar
 ## Generar datos
 st.sidebar.write("**Definición del dataset**")
@@ -63,15 +63,18 @@ if dataset_generado:
     st.session_state["y_val"] = y
     if "model" in st.session_state:
         del st.session_state["model"]
+    if "model_values" in st.session_state:
+        del st.session_state["model_values"]
     if "error" in st.session_state:
         del st.session_state["error"]
 
 ## Modelo
 st.sidebar.write("**Metaparámetros**")
-n = st.sidebar.slider("Grado del polinomio",1, 10, 2)
+n = st.sidebar.slider("Grado del polinomio", min_value=1, max_value=15, value=1)
 if st.sidebar.button("Ajustar modelo"):
     z = np.polyfit(st.session_state["x_train"], st.session_state["y_train"], n)
     p_model = np.poly1d(z)
+    st.session_state["model_values"] = z
     #x_model = np.linspace(x_min, x_max)
     #y_model = p_model(x_model)
     #st.session_state["model"] = (x_model, y_model)
@@ -92,6 +95,14 @@ st.sidebar.markdown("Creado por [sebastiandres](https://sebastiandres.xyz)")
 st.write("Modelo:")
 latex = "a_0 + " + " + ".join("a_{"+str(i)+"} x^{"+str(i)+"}" for i in range(1,n+1))
 st.latex(latex)
+fit_model_text = st.empty()
+fit_model_values = st.empty()
+if "model" in st.session_state:
+        fit_model_text.write("Modelo ajustado:")
+        a = list(st.session_state["model_values"])[::-1]
+        #st.write(a, type(a))
+        latex = f"{a[0]:+.3f} " + " ".join(f"{a[i]:+.3f} " + " x^{"+ str(i)+"}" for i in range(1, len(a)))
+        fit_model_values.latex(latex)
 
 ## Graphs
 c1, c2, c3 = st.columns(3)
@@ -101,7 +112,7 @@ if "model" in st.session_state:
     model_train = model_eval(st.session_state["x_train"], st.session_state["y_train"], st.session_state["model"])
     plt.plot(model_train["x"],model_train["y"], 'r', lw=2.0)
     #plt.plot(st.session_state["model"][0], st.session_state["model"][1], 'r', lw=2.0)
-title = "Set de entrenamiento"
+title = f"Set de entrenamiento, {st.session_state['x_train'].shape[0]:,d} puntos"
 if "error" in st.session_state:
     title += f"\nError = {st.session_state['error']['train']:.2f}"
 plt.suptitle(title)
@@ -115,7 +126,7 @@ if "model" in st.session_state:
     model_test = model_eval(st.session_state["x_test"], st.session_state["y_test"], st.session_state["model"])
     plt.plot(model_test["x"], model_test["y"], 'r', lw=2.0)
     #plt.plot(st.session_state["model"][0], st.session_state["model"][1], 'r', lw=2.0)
-title = "Set de entrenamiento"
+title = f"Set de testeo, {st.session_state['x_test'].shape[0]:,d} puntos"
 if "error" in st.session_state:
     title += f"\nError = {st.session_state['error']['test']:.2f}"
 plt.suptitle(title)
@@ -130,7 +141,7 @@ if show_val:
         model_val = model_eval(st.session_state["x_val"], st.session_state["y_val"], st.session_state["model"])
         plt.plot(model_val["x"],model_val["y"], 'r', lw=2.0)
         #plt.plot(st.session_state["model"][0], st.session_state["model"][1], 'r', lw=2.0)
-    title = "Set de validación"
+    title = f"Set de validación, {st.session_state['x_val'].shape[0]:,d} puntos"
     if "error" in st.session_state:
         title += f"\nError = {st.session_state['error']['val']:.2f}"
     plt.suptitle(title)
