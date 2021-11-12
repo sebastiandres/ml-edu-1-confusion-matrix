@@ -1,20 +1,16 @@
-# Streamlit Template
+# ML EDU
+Esta aplicación de streamlit ha sido diseñada para educar en ciertos aspectos de Machine Learning.
 
-This is a template for Streamlit projects.
-
-# Customize
-
-Edit `/streamlit_app.py` and `/pages/*.py`to customize this app.
 
 # Online demo
 
-To see an online demo, use this link:
+Demo online:
 
-[https://share.streamlit.io/sebastiandres/template_streamlit/main](https://share.streamlit.io/sebastiandres/template_streamlit/main)
+[https://share.streamlit.io/sebastiandres/streamlit_ml_edu/main](https://share.streamlit.io/sebastiandres/streamlit_ml_edu/main)
 
 ## Local run
 
-To locally run the app, 
+Ejecución local:
 
 ```
 streamlit run streamlit_app.py
