@@ -1,0 +1,20 @@
+[theme]
+
+# Using scheme color from the Matrix Movie: https://www.schemecolor.com/matrix-code-green.php
+
+# Primary accent for interactive elements
+primaryColor = '#00FF41'
+
+# Background color for the main content area
+backgroundColor = '#0D0208'
+
+# Background color for sidebar and most interactive widgets
+secondaryBackgroundColor = '#0D0D0D'
+
+# Color used for almost all text
+textColor = '#008F11'
+
+# Font family for all text in the app, except code blocks
+# Accepted values (serif | sans serif | monospace) 
+# Default: "sans serif"
+font = "monospace"
