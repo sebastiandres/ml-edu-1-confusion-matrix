@@ -18,7 +18,7 @@ The classification problem can be applied to problems with multiple categories (
 
 A confusion matrix is an arragement of the countings of each of these outcome posibilities. To create a confusion matrix, there are some arbitrarily decision regarding order and orientation. There are 4 options, as shown on the picture:
 
-IMAGE
+<img src="https://github.com/sebastiandres/ml_edu_confusion_matrix/blob/main/images/conventions.png?raw=true" alt="Conventions" width="700">
 
 As you can see, the differences are essencially if rows should be the true labels or predicted labels, and if values should be in order positive-negative, or negative-positive. As in any arbitrary choice, not everyone will agree and use the same. Be careful when reading and interpreting the results!
 
