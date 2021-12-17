@@ -11,4 +11,4 @@ And no, we won't make the tired joke on taking the confusion out of the confusio
 
 Use the arrows to navigate through the content. Some pages will have interactive content that should be self-explanatory.
 
-Let's start on our journey!
+Let's see how deep the rabbit hole goes!
