@@ -59,4 +59,4 @@ df = pd.DataFrame(data=[[f"Total = {T}", f"PP = {TP + FN}", f"PN = {FP + TN}"],
                         columns=["", "Prediction Positive", "Prediction Negative"])
 st.write(df)
 
-stb.share("sebastiandres.xyz", "My_text")
+stb.share("sebastiandres.xyz", "Un texto largo con espacios")
