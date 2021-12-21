@@ -8,7 +8,8 @@ st.set_page_config(page_title="Confusion Matrix",
                     layout="centered")
 
 # Streamit book properties
-stb.set_book_config(path="pages", 
+stb.set_book_config(path="pages",
+                    button="both",
                     button_next="Next",
                     button_previous="Previous",
                     button_refresh="Reload",

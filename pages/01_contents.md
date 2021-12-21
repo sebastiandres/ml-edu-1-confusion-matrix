@@ -1,9 +1,8 @@
 # Confusion Matrix
 
-## Everything you wanted to know and were afraid to ask
+*Everything you wanted to know and were afraid to ask*
 
-This web app will try to demistify the terminology used in classification systems, 
-like confusion matrix and prediction metrics (accuracy, recall, type I/II error, et cetera). 
+This web app will try to clarify the concepts of confusion matrix and prediction metrics (accuracy, recall, type I/II error, et cetera). 
 
 I guarantee you'll learn something new even if you're familiar with the terminology already.
 
