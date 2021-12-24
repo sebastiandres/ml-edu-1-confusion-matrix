@@ -1,5 +1,7 @@
-# Equation time!
+import streamlit as st
 
+st.title("Equation time")
+md = """
 How can we convert the metrics to a confusion matrix? First of all, we have to agree on a scaling. Any scaling is OK, but using M = 100 is simpler and will allow to think in terms of percentages. You can use as well M = 1000, 100,000 or any other number.
 We need to obtain the following numbers:
 * $P$: number of positive cases
@@ -14,4 +16,5 @@ From the definitions, we have:
 So we obtain:
 * $P = $
 * $TP = $
-* $TN = $
+* $TN = $"""
+st.markdown(md, unsafe_allow_html=True)

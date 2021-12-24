@@ -1,5 +1,7 @@
-# Conventions on the confusion matrix
+import streamlit as st
 
+st.title("Conventions")
+md = """
 Confusion matrices are used to evaluate the performance of a classification algorithm. A classification algorithm is any instance where a prediction is made over a finite set of options:
 - Cancer prediction: Based on medical data, let's predict whether a person has cancer or not.
 - Dropout prediction: Based on the student data and performance, let's predict whether a student is going to drop out or not.
@@ -34,3 +36,5 @@ Despite our highest regards to Andrew, we will take the convention A as the most
 that convention on the rest of this content.
 
 Next, we will have a interactive widget to play with the confusion matrix!
+"""
+st.markdown(md, unsafe_allow_html=True)

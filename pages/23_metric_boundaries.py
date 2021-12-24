@@ -1,5 +1,7 @@
-# Metrics boundaries
+import streamlit as st
 
+st.title("Metrics boundaries")
+md = """
 * False Negative Rate (FNR): $0 \leq FNR \leq 1$
 * False Positive Rate (FPR): $0 \leq FPR \leq 1$
 * True Positive Rate (TPR): $0 \leq TPR \leq 1$
@@ -9,3 +11,5 @@
 * Recall: $0 \leq Rec \leq 1$
 * Specificity: $0 \leq Spec \leq 1$
 * F1-score: $0 \leq F1 \leq 1$
+"""
+st.markdown(md, unsafe_allow_html=True)

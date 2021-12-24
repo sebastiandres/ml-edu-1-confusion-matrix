@@ -1,3 +1,7 @@
+import streamlit as st
+
+st.title("Template Title")
+md = """
 # Type I and type II errors
 
 IMAGE in depth
@@ -20,3 +24,5 @@ FP = 10, FN = 20, M = 100, P/N = .8
 FP = 10, FN = 20, M = 1000, P/N = .2
 FP = 10, FN = 20, M = 1000, P/N = .51
 FP = 10, FN = 20, M = 1000, P/N = .8
+"""
+st.markdown(md, unsafe_allow_html=True)
