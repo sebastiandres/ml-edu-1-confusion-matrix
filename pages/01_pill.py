@@ -10,16 +10,15 @@ BLUE_PILL = "You take the blue pill - the story ends, you wake up in your bed an
 RED_PILL = "You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes."
 
 def button_on_click(pill, BLUE_PILL=BLUE_PILL, SECS=SECS):
-    import time
+    from code import magic
     if pill==BLUE_PILL:
         st.success("Are you sure? \n You've been down there, Neo. \nYou already know that road. \nYou know exactly where it ends. \nAnd I know that's not where you want to be")
         st.session_state["do_matrix_effect"] = False
     else:
         st.session_state["do_matrix_effect"] = True
         with st.spinner("Buckly up Dorothy, because Kansas is going bye-bye!"):
-            time.sleep(1.0*SECS)
+            magic.pause(1.0*SECS)
         st.session_state["button"] = st.session_state["default_button"]      
-        #magic.matrix_effect(height=400, sleep_time=3)
 
 if "do_matrix_effect" not in st.session_state:
     st.session_state["do_matrix_effect"] = False
@@ -55,9 +54,9 @@ if not st.session_state.do_matrix_effect:
     for line in md.split("\n"):
         st.markdown(line, unsafe_allow_html=True)
         if st.session_state["page_run_count"] == 0:
-            time.sleep(SECS * len(line) / 30) # 30 chars per second
+            magic.pause(SECS * len(line) / 30) # 30 chars per second
     if st.session_state["page_run_count"] == 0:
-        time.sleep(1*SECS)
+        magic.pause(1*SECS)
 
     # Do the pill question!
     pill = st.radio(QUESTION, [BLUE_PILL, RED_PILL])

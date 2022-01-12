@@ -4,23 +4,44 @@ import streamlit as st
 from streamlit.components.v1 import html
 import time
 
+DEBUG = False
+
+def pause(sleep_time=3):
+    """
+    Pause for a given time.
+    """
+    if DEBUG:
+        return
+    time.sleep(sleep_time)
+    return
+
 def blinking_effect(blinking_time=0.5, blinking_duration=2.5):
-    c = st.empty()
-    for i in range(int(blinking_duration/blinking_time)):
-        c.markdown("▉")
-        time.sleep(blinking_time)
-        c.markdown("")
-        time.sleep(blinking_time)
+    """
+    Creates the effect of blinking cursor
+    """
+    if not DEBUG:
+        c = st.empty()
+        for i in range(int(blinking_duration/blinking_time)):
+            c.markdown("▉")
+            time.sleep(blinking_time)
+            c.markdown("")
+            time.sleep(blinking_time)
+
 
 def matrix_effect(height=1600, sleep_time=3):
     """
     Applies the matrix effect to the current page.
     """
+    if DEBUG:
+        return
+
     # If not required, skip the matrix effect
     if "do_matrix_effect" not in st.session_state:
         return
+
     if not st.session_state["do_matrix_effect"]:
         return
+
     # If not, do the effect.
     if "count" not in st.session_state:
         st.session_state.count = 0

@@ -2,25 +2,10 @@ import streamlit as st
 import streamlit_book as stb
 import pandas as pd
 
-st.title("Matrix to Metrics")
+st.session_state["do_matrix_effect"] = False
+
 md = """
-Any confusion matrix can be completely reduced to 4 variables:
-* $T$: total number of cases
-* $P$: number of (actual) positive cases
-* $TP$: number of true positive cases
-* $TN$: number of true negative cases
-
-Having fixed those, we can always obtain the other variables:
-* $N = T - P$: the number of (actual) negative cases.
-* $FP = P - TP$: number of false positive cases
-* $FN = N - TN$: number of false negative cases
-* $PN = FP + FN$: predicted number of negative (false) cases
-* $PP = TP + FP$: predicted number of positive (true) cases
-"""
-st.markdown(md, unsafe_allow_html=True)
-
-md = """"
-Use the widget to see how changing any of these variables have an impact on the matrix:
+Use the widget to construct any confusion matrix:
 """
 st.markdown(md, unsafe_allow_html=True)
 
@@ -30,7 +15,6 @@ if "TP_rate" not in st.session_state:
     st.session_state.TP_rate = 0.5
 if "TN_rate" not in st.session_state:
     st.session_state.TN_rate = 0.5
-
 
 c1, c2, c3, c4 = st.columns(4)
 # Slider for total. Is independent of others.

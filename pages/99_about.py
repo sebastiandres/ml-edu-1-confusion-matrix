@@ -12,7 +12,7 @@ st.header("About the app")
 md = """
 This web app was build with Streamlit, streamlit book, numpy, scikit learn, pandas and matplotlib.
 
-Content and images have been taken from various sources, duly referenced where used.
+Content and images have been taken from various sources.
 
 Developped by [sebastiandres](http://sebastiandres.xyz)
 """
