@@ -3,5 +3,5 @@ streamlit_book
 numpy
 matplotlib
 pandas
-scikit-learn=1.0.0
+scikit-learn>=1.0.0
 watchdog
