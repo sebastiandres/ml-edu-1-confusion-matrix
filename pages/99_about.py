@@ -1,23 +1,27 @@
 import streamlit as st
+import streamlit_book as stb
 
-st.title("About")
 md = """
-## Conclusion
+Your training has ended.
 
 Hopefully, you have now a good understanding of confusion matrix and prediction metrics.
+"""
+st.markdown(md, unsafe_allow_html=True)
 
-Please share and comment!
-
-stb.share
-Check out this cool confusion matrix interactive page
-https://bit.ly/3phBbmf
-
-## About the app
-
+st.header("About the app")
+md = """
 This web app was build with Streamlit, streamlit book, numpy, scikit learn, pandas and matplotlib.
 
 Content and images have been taken from various sources, duly referenced where used.
 
-Developped by [sebastiandres](sebastiandres.xyz)
+Developped by [sebastiandres](http://sebastiandres.xyz)
 """
 st.markdown(md, unsafe_allow_html=True)
+
+
+st.header("Sharing")
+md = """
+Please share and comment!
+"""
+st.markdown(md, unsafe_allow_html=True)
+stb.share("https://bit.ly/3phBbmf", "Check out this cool confusion matrix interactive page")

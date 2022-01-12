@@ -12,12 +12,14 @@ def blinking_effect(blinking_time=0.5, blinking_duration=2.5):
         c.markdown("")
         time.sleep(blinking_time)
 
-def matrix_effect(height=1600, sleep_time=2):
+def matrix_effect(height=1600, sleep_time=3):
     """
     Applies the matrix effect to the current page.
     """
     # If not required, skip the matrix effect
     if "do_matrix_effect" not in st.session_state:
+        return
+    if not st.session_state["do_matrix_effect"]:
         return
     # If not, do the effect.
     if "count" not in st.session_state:
