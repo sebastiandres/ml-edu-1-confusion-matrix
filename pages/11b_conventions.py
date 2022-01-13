@@ -13,13 +13,10 @@ and if values should be in order positive-negative, or negative-positive.
 
 As in any arbitrary choice, not everyone will agree and use the same. Be careful when reading and interpreting the results!
 
-"Convention A" is the convention explained by [wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix).
-
-"Convention B" is used by [scikit learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html). 
-
-"Convention C" is the convention taken by Andrew Ng's on his [courses on Machine Learning](https://medium.com/@aiii/machine-learning-diagnostics-b2256d78d51e). 
-
-"Convention D" is not frequently used, as far as I know. 
+* "Convention A" is the convention explained by [wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix).
+* "Convention B" is used by [scikit learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html). 
+* "Convention C" is the convention taken by Andrew Ng's on his [courses on Machine Learning](https://medium.com/@aiii/machine-learning-diagnostics-b2256d78d51e). 
+* "Convention D" is not frequently used, as far as I know. 
 
 There is a nice discussion on [stackoverflow](https://stackoverflow.com/questions/56078203/why-scikit-learn-confusion-matrix-is-reversed) regarding  this issue.
 

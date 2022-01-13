@@ -35,10 +35,13 @@ TN_value = int(st.session_state.TN_rate*N)
 TN = c4.slider(label="True Negative TN", min_value=0, max_value=(T-P), value=TN_value, step=1)
 st.session_state.TN_rate = TN/N
 
-FN = N - TN
-FP = P - TP
-df = pd.DataFrame(data=[[f"Total = {T}", f"PP = {TP + FN}", f"PN = {FP + TN}"],
-                        [f"P = {P}", f"TP = {TP}", f"FP = {FP}"],
-                        [f"N = {N}", f"FN = {FN}", f"TN = {TN}"]], 
-                        columns=["", "Prediction Positive", "Prediction Negative"])
-st.write(df)
+# The code to write the confusion matrix
+FP = N - TN
+FN = P - TP
+labels = ["red pill", "blue pill"]
+index = [["actual values" for _ in labels], labels]
+cols = [["prediction" for _ in labels], labels]
+df_CM = pd.DataFrame(index=index, columns=cols, data=[[TN, FP], [FN, TP]])
+#st.write(df_CM)
+# This is a small hack that shows the dataframe better in streamlit
+st.markdown(df_CM.to_html(), unsafe_allow_html=True)

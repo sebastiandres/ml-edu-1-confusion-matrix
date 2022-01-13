@@ -1,14 +1,14 @@
 import streamlit as st
 
 md = """
-You can use pandas to print it in a more readable way.
+You can use pandas to print it in a more readable way, renaming the columns and rows:
 
 ```python
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 
-true_condition = [0,0,0,1,0,0,1,1,1,0]
-pred_condition = [0,0,1,0,0,1,0,0,1,0]
+true_condition = [0, 0, 0, 1, 0, 0, 1, 1, 1, 0]
+pred_condition = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0]
 CM = confusion_matrix(true_condition, pred_condition)
 labels = ["red pill", "blue pill"]
 index = [["actual values" for _ in labels], labels]
@@ -24,8 +24,8 @@ st.markdown(md, unsafe_allow_html=True)
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 
-true_condition = [0,0,0,1,0,0,1,1,1,0]
-pred_condition = [0,0,1,0,0,1,0,0,1,0]
+true_condition = [0, 0, 0, 1, 0, 0, 1, 1, 1, 0]
+pred_condition = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0]
 CM = confusion_matrix(true_condition, pred_condition)
 labels = ["red pill", "blue pill"]
 index = [["actual values" for _ in labels], labels]

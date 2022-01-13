@@ -4,7 +4,7 @@ import streamlit as st
 from streamlit.components.v1 import html
 import time
 
-DEBUG = False
+DEBUG = True
 
 def pause(sleep_time=3):
     """
