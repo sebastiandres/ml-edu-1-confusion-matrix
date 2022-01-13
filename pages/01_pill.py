@@ -17,7 +17,7 @@ def button_on_click(pill, BLUE_PILL=BLUE_PILL, SECS=SECS):
     else:
         st.session_state["do_matrix_effect"] = True
         with st.spinner("Buckly up Dorothy, because Kansas is going bye-bye!"):
-            magic.pause(1.0*SECS)
+            magic.pause(2.0*SECS)
         st.session_state["button"] = st.session_state["default_button"]      
 
 if "do_matrix_effect" not in st.session_state:
