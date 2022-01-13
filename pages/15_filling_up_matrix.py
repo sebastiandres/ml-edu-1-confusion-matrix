@@ -5,6 +5,11 @@ import pandas as pd
 st.session_state["do_matrix_effect"] = False
 
 md = """
+
+<img src="https://github.com/sebastiandres/ml_edu_confusion_matrix/blob/main/images/confusion_matrix2.png?raw=true" alt="Conventions" width="700">
+<br>
+<br>
+
 Use the widget to construct any confusion matrix:
 """
 st.markdown(md, unsafe_allow_html=True)

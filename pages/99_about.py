@@ -2,9 +2,9 @@ import streamlit as st
 import streamlit_book as stb
 
 md = """
-Your training has ended.
+Your training has ended. For now.
 
-Hopefully, you have now a good understanding of confusion matrix and prediction metrics.
+Hopefully, you have now a good understanding of confusion matrix.
 """
 st.markdown(md, unsafe_allow_html=True)
 
@@ -17,7 +17,6 @@ Content and images have been taken from various sources.
 Developped by [sebastiandres](http://sebastiandres.xyz)
 """
 st.markdown(md, unsafe_allow_html=True)
-
 
 st.header("Sharing")
 md = """

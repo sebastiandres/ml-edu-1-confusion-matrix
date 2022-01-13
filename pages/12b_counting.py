@@ -14,12 +14,11 @@ but in reality we obtained `true_condition[i]`.
 
 We can automate the counting process with the following code:
 
-The confusion matrix can be computed easily as:
-
 ```python
 from sklearn.metrics import confusion_matrix
 CM = confusion_matrix(true_condition, pred_condition)
 ```
+Obtaining:
 """
 st.markdown(md, unsafe_allow_html=True)
 
