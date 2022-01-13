@@ -3,11 +3,11 @@ import streamlit as st
 md = """
 So we work with the following convention for confusion matrices:
 
-<img src="https://github.com/sebastiandres/ml_edu_confusion_matrix/blob/main/images/confusion_matrix.png?raw=true" alt="Conventions" width="700">
+<img src="https://github.com/sebastiandres/ml_edu_confusion_matrix/blob/main/images/confusion_matrix1.png?raw=true" alt="Conventions" width="700">
 
-The true condition is fixed. You cannot change reality (at least for now, Neo). 
+The true condition is fixed. What's positive is positive and what's negative is negative. You cannot change reality (at least for now, Neo). 
 So the total of Positive $P$ and Negative $N$, and the total number of patients $T$ is fixed. 
-Only your predictions can change, altering the true positive, true negative, false positive, and false negative. 
+Only your predictions can change, altering the true positive, true negative, false positive, and false negative.
 
 Therefore, any confusion matrix can be completely reduced to 4 variables:
 * $T$: total number of cases
@@ -21,10 +21,9 @@ Having fixed those, we can always obtain the other variables:
 * $FN = N - TN$: number of false negative cases
 * $PN = FP + FN$: predicted number of negative (false) cases
 * $PP = TP + FP$: predicted number of positive (true) cases
-"""
-st.markdown(md, unsafe_allow_html=True)
 
-md = """
+<img src="https://github.com/sebastiandres/ml_edu_confusion_matrix/blob/main/images/confusion_matrix2.png?raw=true" alt="Conventions" width="700">
+
 From this, we get that true positive, true negative, 
 false positive and false negative have specific trivial boundaries:
 
